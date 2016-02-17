@@ -115,7 +115,7 @@ var app = angular
     .state('app.dashboard', {
       url: '/dashboard',
       controller: 'DashboardCtrl',
-      templateUrl: 'views/tmpl/dashboard.html',
+      templateUrl: 'views/tmpl/render/main.html',
       resolve: {
         plugins: ['$ocLazyLoad', function($ocLazyLoad) {
           return $ocLazyLoad.load([
