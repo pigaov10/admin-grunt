@@ -147,12 +147,37 @@
         <section class="tile" fullscreen="isFullscreen01" ng-controller="ProgressDemoCtrl">
           <!-- tile header -->
           <div class="tile-header dvd dvd-btm">
-            <h1 class="custom-font"><strong>Progress</strong> Bars</h1>
+            <h1 class="custom-font"><strong>Tempos</strong> operacionais</h1>
           </div>
           <!-- /tile header -->
           <!-- tile body -->
           <div class="tile-body">
-              skdasdij
+        <!-- tile -->
+        <section class="tile" fullscreen="isFullscreen13">
+
+          
+          <!-- /tile header -->
+
+          <!-- tile body -->
+          <div class="tile-body" ng-controller="EasypiechartCtrl">
+
+            <!-- row -->
+            <div class="row">
+              <!-- col -->
+              <div class="col-md-3 text-center">
+                <div easypiechart options="easypiechart.options" percent="easypiechart.percent" class="easypiechart" style="width: 180px; height: 180px;">
+                  <span class="pie-percent custom-font" ng-bind="easypiechart.percent" style="line-height: 170px;"></span>
+                </div>
+              </div>
+              
+              <!-- /col -->
+            </div>
+            <!-- /row -->
+
+          </div>
+          <!-- /tile body -->
+
+        </section>
           </div>
           <!-- /tile body -->
         </section>
