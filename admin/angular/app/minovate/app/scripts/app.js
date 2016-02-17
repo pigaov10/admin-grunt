@@ -126,6 +126,12 @@ var app = angular
       }
     })
     //mail
+    .state('app.equipe', {
+      url: '/equipe',
+      controller: 'EquipeCtrl',
+      templateUrl: 'views/tmpl/render/equipe.html'
+    })
+    //mail
     .state('app.mail', {
       abstract: true,
       url: '/mail',

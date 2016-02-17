@@ -11,7 +11,7 @@ app
   .controller('MainCtrl', function ($scope, $http, $translate) {
 
     $scope.main = {
-      title: 'Minovate',
+      title: 'WiseView',
       settings: {
         navbarHeaderColor: 'scheme-default',
         sidebarColor: 'scheme-default',

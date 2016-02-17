@@ -1,0 +1,64 @@
+<div class="page page-dashboard">
+  <div class="pageheader">
+
+    <div class="page-bar">
+
+      <ul class="page-breadcrumb">
+        <li>
+          <a href="#">Dashboard</a>
+        </li>
+
+      <div ng-controller="DaterangepickerCtrl" class="page-toolbar">
+        <a href="javascript:;" class="btn btn-lightred no-border" daterangepicker="rangeOptions" date-begin="startDate" date-end="endDate">
+          <i class="fa fa-calendar"></i>&nbsp;&nbsp;<span>{{startDate}} - {{endDate}}</span>&nbsp;&nbsp;<i class="fa fa-angle-down"></i>
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+  <!-- page content -->
+  <div class="pagecontent">
+      <div class="col-md-12">
+
+        <!-- tile -->
+        <section class="tile" fullscreen="isFullscreen01">
+
+<div class="row">  
+          <div class="tile-body" ng-controller="TableRowCtrl">
+
+            <button class="btn btn-default btn-sm pull-right" ng-click="tableParams.data[1].$selected = true">Select second row</button>
+            <div>
+              <strong>Selected users:</strong> {{ data | filter:{"$selected": true} }}
+            </div>
+
+            <table ng-table="tableParams" show-filter="true" class="table table-custom ng-table-rowselected">
+              <tr ng-repeat="user in $data"
+                  ng-click="user.$selected = !user.$selected; changeSelection(user)"
+                  ng-class="{'active': user.$selected}">
+                <td data-title="'Name'" sortable="'name'" filter="{ 'name': 'text' }">
+                  {{user.name}}
+                </td>
+                <td data-title="'Age'" sortable="'age'" filter="{ 'age': 'text' }">
+                  {{user.age}}
+                </td>
+                <td data-title="'Age'" sortable="'age'" filter="{ 'age': 'text' }">
+                  abc
+                </td>
+                                <td data-title="'Age'" sortable="'age'" filter="{ 'age': 'text' }">
+                  abc
+                </td>
+                                <td data-title="'Age'" sortable="'age'" filter="{ 'age': 'text' }">
+                  abc
+                </td>
+                                <td data-title="'Age'" sortable="'age'" filter="{ 'age': 'text' }">
+                  abc
+                </td>
+              </tr>
+            </table>
+
+          </div>
+          </div>
+        </section>
+</div>
+</div>
