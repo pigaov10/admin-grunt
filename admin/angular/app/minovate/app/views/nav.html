@@ -1,0 +1,21 @@
+<div id="sidebar-wrap" ng-controller="NavCtrl">
+  <accordion close-others="oneAtTime" slimscroll="{height: '100%'}">
+
+    <accordion-group is-open="status.isFirstOpen" ng-class="{'open': status.isFirstOpen, 'closed': !status.isFirstOpen}">
+      <accordion-heading>
+        Navigation <i class="fa" ng-class="{'fa-angle-up': status.isFirstOpen, 'fa-angle-down': !status.isFirstOpen}"></i>
+      </accordion-heading>
+      <ul id="navigation" nav-collapse ripple>
+        <li ui-sref-active="active"><a ui-sref="app.dashboard"><fa name="dashboard"></fa> <span>{{ 'Menu.DASHBOARD' | translate }}</span></a></li>
+        <li ui-sref-active="active" ng-class="{'open':$state.includes('app.mail')}">
+          <a ui-sref="app.mail"><fa name="envelope-o"></fa> <span>{{ 'Menu.MAIL' | translate }}</span> <span class="badge bg-lightred">6</span></a>
+          <ul>
+            <li ui-sref-active="active"><a ui-sref="app.mail.inbox"><fa name="caret-right"></fa> {{ 'Menu.INBOX' | translate }}</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.mail.compose"><fa name="caret-right"></fa> {{ 'Menu.COMPOSE_MAIL' | translate }}</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.mail.single"><fa name="caret-right"></fa> {{ 'Menu.SINGLE_MAIL' | translate }}</a></li>
+          </ul>
+        </li>
+    </accordion-group>
+
+  </accordion>
+</div>
