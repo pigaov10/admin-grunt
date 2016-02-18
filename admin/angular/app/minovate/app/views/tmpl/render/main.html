@@ -1,47 +1,127 @@
 <div class="page page-dashboard">
   <div class="pageheader">
-
     <div class="page-bar">
-
       <ul class="page-breadcrumb">
         <li>
           <a href="#">Dashboard</a>
         </li>
-
+      </ul>
       <div ng-controller="DaterangepickerCtrl" class="page-toolbar">
         <a href="javascript:;" class="btn btn-lightred no-border" daterangepicker="rangeOptions" date-begin="startDate" date-end="endDate">
           <i class="fa fa-calendar"></i>&nbsp;&nbsp;<span>{{startDate}} - {{endDate}}</span>&nbsp;&nbsp;<i class="fa fa-angle-down"></i>
         </a>
       </div>
-
-    </div>
-
-  </div>
-
-<div class="row">  
-<div class="col-md-4">
-  <div class="row" style="width:300px">
-    <div ng-controller="PillsDemoCtrl">
-      <tabset justified="true" type="pills">
-        <tab heading="Tarefas">Tarefas</tab>
-        <tab heading="Sinais Vitais">Tarefa</tab>
-      </tabset>
     </div>
   </div>
-</div>
-<div class="col-md-4">
-  <div class="row" style="width:300px">
+  <!-- END PAGE HEADER -->
 
-  </div>
-</div>
+  <div class=˜row˜>
+    <!-- card 1-->
+    <div class="card-container col-lg-3 col-sm-6 col-sm-12">
+      <div class="card">
+        <div class="front bg-greensea">
+          <!-- row -->
+          <div class="row">
+            <!-- col -->
+            <div class="col-xs-4">
+              <i class="fa fa-users fa-4x"></i>
+            </div>
+            <!-- /col -->
+            <!-- col -->
+            <div class="col-xs-8">
+              <p class="text-elg text-strong mb-0">3 659</p>
+              <span>New Users</span>
+            </div>
+            <!-- /col -->
+          </div>
+          <!-- /row -->
+        </div>
+        </div>
+      </div>
 
-      <div class="col-md-4">
+    <!--card 2 -->
+    <div class="card-container col-lg-3 col-sm-6 col-sm-12">
+      <div class="card">
+        <div class="front bg-greensea">
+          <!-- row -->
+          <div class="row">
+            <!-- col -->
+            <div class="col-xs-4">
+              <i class="fa fa-users fa-4x"></i>
+            </div>
+            <!-- /col -->
+            <!-- col -->
+            <div class="col-xs-8">
+              <p class="text-elg text-strong mb-0">3 659</p>
+              <span>New Users</span>
+            </div>
+            <!-- /col -->
+          </div>
+          <!-- /row -->
+        </div>
+        </div>
+      </div>
+
+      <!-- card 3 -->
+    <div class="card-container col-lg-3 col-sm-6 col-sm-12">
+      <div class="card">
+        <div class="front bg-greensea">
+          <!-- row -->
+          <div class="row">
+            <!-- col -->
+            <div class="col-xs-4">
+              <i class="fa fa-users fa-4x"></i>
+            </div>
+            <!-- /col -->
+            <!-- col -->
+            <div class="col-xs-8">
+              <p class="text-elg text-strong mb-0">3 659</p>
+              <span>New Users</span>
+            </div>
+            <!-- /col -->
+          </div>
+          <!-- /row -->
+        </div>
+        </div>
+      </div>
+
+      <!-- card 4-->
+    <div class="card-container col-lg-3 col-sm-6 col-sm-12">
+      <div class="card">
+        <div class="front bg-greensea">
+          <!-- row -->
+          <div class="row">
+            <!-- col -->
+            <div class="col-xs-4">
+              <i class="fa fa-users fa-4x"></i>
+            </div>
+            <!-- /col -->
+            <!-- col -->
+            <div class="col-xs-8">
+              <p class="text-elg text-strong mb-0">3 659</p>
+              <span>New Users</span>
+            </div>
+            <!-- /col -->
+          </div>
+          <!-- /row -->
+        </div>
+        </div>
+      </div>
+
+
+
+      <div class="row">
+        <div class="col-md-8">
+          <div ng-controller="PillsDemoCtrl">
+            <tabset justified="true" type="pills">
+              <tab heading="Tarefas">Tarefas</tab>
+              <tab heading="Sinais Vitais">
         <!-- tile -->
-        <section class="tile bg-greensea widget-appointments" fullscreen="isFullscreen10" ng-controller="AppointmentsWidgetCtrl">
+        <section class="tile" fullscreen="isFullscreen04">
 
           <!-- tile header -->
           <div class="tile-header dvd dvd-btm">
-            <h1 class="custom-font">Appointments</h1>
+            <h1 class="custom-font"><strong>Ordered </strong>Chart</h1>
             <ul class="controls">
               <li class="dropdown" dropdown on-toggle="toggled(open)">
 
@@ -60,7 +140,7 @@
                     </a>
                   </li>
                   <li>
-                    <a href tile-control-fullscreen ng-click="isFullscreen10 = !isFullscreen10">
+                    <a href tile-control-fullscreen ng-click="isFullscreen04 = !isFullscreen04">
                       <fa name="expand"></fa> Fullscreen
                     </a>
                   </li>
@@ -74,75 +154,59 @@
           <!-- /tile header -->
 
           <!-- tile body -->
-          <div class="tile-body">
-            <!-- row -->
-            <div class="row">
-              <!-- col -->
-              <div class="col-md-6 text-center">
+          <div class="tile-body" ng-controller="OrderedChartCtrl">
 
-                <h4 class="text-light">Bratislava</h4>
-                <clock radius="60"></clock>
-                <span class="text-light">30&deg;C</span>
+            <flot dataset="dataset" options="options" height="250px"></flot>
 
-              </div>
-              <!-- /col -->
-              <!-- col -->
-              <div class="col-md-6 b-l text-center">
-                <span class="day">{{date | date:'dd'}}</span><br/>
-                <span class="month">{{date | date:'MMMM'}}</span>
-              </div>
-              <!-- /col -->
-            </div>
-            <!-- /row -->
           </div>
           <!-- /tile body -->
 
-          <!-- tile footer -->
-          <div class="tile-footer dvd dvd-top mt-20">
-
-            <wrap-owlcarousel class="owl-carousel" data-options="{
-            autoPlay: 5000,
-            stopOnHover: true,
-            slideSpeed : 300,
-            paginationSpeed : 400,
-            navigation: true,
-            navigationText : ['<i class=\'fa fa-chevron-left\'></i>','<i class=\'fa fa-chevron-right\'></i>'],
-            singleItem : true}">
-
-              <div>
-                <p class="text-center text-strong"><i class="fa fa-clock-o"></i> 16:00, <small class="text-thin">Estimated time: 2 hours</small></p>
-                <p>
-                  <h5 class="mt-10 mb-0 text-strong">Release Update</h5>
-                  <small class="text-thin text-transparent-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</small>
-                </p>
-              </div>
-
-              <div>
-                <p class="text-center text-strong"><i class="fa fa-clock-o"></i> 19:00, <small class="text-thin">Estimated time: 5 hours</small></p>
-                <p>
-                  <h5 class="mt-10 mb-0 text-strong">Make a Backup</h5>
-                  <small class="text-thin text-transparent-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</small>
-                </p>
-              </div>
-
-              <div>
-                <p class="text-center text-strong"><i class="fa fa-clock-o"></i> 22:45, <small class="text-thin">Estimated time: 8 hours 45 minutes</small></p>
-                <p>
-                  <h5 class="mt-10 mb-0 text-strong">Buy Tickets</h5>
-                  <small class="text-thin text-transparent-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</small>
-                </p>
-              </div>
-
-            </wrap-owlcarousel>
-
-          </div>
-          <!-- /tile footer -->
-
         </section>
-        <!-- /tile -->
+              </tab>
+            </tabset>
+          </div>
+        </div>
+        <div class="col-md-4">
+            <section class="tile bg-greensea widget-appointments" fullscreen="isFullscreen10" ng-controller="AppointmentsWidgetCtrl">
+              <!-- tile header -->
+              <div class="tile-header dvd dvd-btm">
+                <h1 class="custom-font">Appointments</h1>
+              </div>
+              <!-- /tile header -->
+              <!-- tile body -->
+              <div class="tile-body">
+                <!-- row -->
+                <div class="row">
+                  <!-- col -->
+                  <div class="col-md-6 text-center">
+                    <h4 class="text-light">Bratislava</h4>
+                    <clock radius="60"></clock>
+                    <span class="text-light">30&deg;C</span>
+                  </div>
+                  <!-- /col -->
+                  <!-- col -->
+                  <div class="col-md-6 b-l text-center">
+                    <span class="day">{{date | date:'dd'}}</span><br/>
+                    <span class="month">{{date | date:'MMMM'}}</span>
+                  </div>
+                  <!-- /col -->
+                </div>
+                <!-- /row -->
+              </div>
+              <!-- /tile body -->
+              <!-- tile footer -->
+              <div class="tile-footer dvd dvd-top mt-20">
+                TESTE
+              </div>
+              <!-- /tile footer -->
+            </section>
+        </div>
       </div>
 
-      <div class="col-md-6">
+      <!-- END CALENDARIO -->
+      <div class="row">
+
+        <div class="col-md-6">
         <!-- tile -->
         <section class="tile" fullscreen="isFullscreen01" ng-controller="ProgressDemoCtrl">
           <!-- tile header -->
@@ -180,30 +244,35 @@
         </section>
           </div>
           <!-- /tile body -->
-        </section>
+        </section>   
+        </div>
+
+        <div class="col-md-6">
+          <!-- tile -->
+          <section class="tile" fullscreen="isFullscreen01" ng-controller="ProgressDemoCtrl">
+            <!-- tile header -->
+            <div class="tile-header dvd dvd-btm">
+              <h1 class="custom-font"><strong>Últimas</strong> atividades</h1>
+            </div>
+            <!-- /tile header -->
+            <!-- tile body -->
+            <div class="tile-body">
+                <table class="table table-stripped">
+                  <tr>
+                    <th>Teste</th>
+                    <th>Teste</th>
+                  </tr>
+                  <tr>
+                    <td>Teste</td>
+                    <td>Teste</td>
+                  </tr>
+                </table>
+            </div>
+            <!-- /tile body -->
+          </section>
+        </div>
       </div>
-      <div class="col-md-6">
-        <!-- tile -->
-        <section class="tile" fullscreen="isFullscreen01" ng-controller="ProgressDemoCtrl">
-          <!-- tile header -->
-          <div class="tile-header dvd dvd-btm">
-            <h1 class="custom-font"><strong>Últimas</strong> atividades</h1>
-          </div>
-          <!-- /tile header -->
-          <!-- tile body -->
-          <div class="tile-body">
-              <table class="table table-stripped">
-                <tr>
-                  <th>Teste</th>
-                  <th>Teste</th>
-                </tr>
-                <tr>
-                  <td>Teste</td>
-                  <td>Teste</td>
-                </tr>
-              </table>
-          </div>
-          <!-- /tile body -->
-        </section>
       </div>
+  </div>
+
 </div>
