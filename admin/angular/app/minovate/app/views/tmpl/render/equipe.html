@@ -1,64 +1,92 @@
 <div class="page page-dashboard">
   <div class="pageheader">
-
     <div class="page-bar">
-
       <ul class="page-breadcrumb">
         <li>
           <a href="#">Dashboard</a>
         </li>
-
+      </ul>
       <div ng-controller="DaterangepickerCtrl" class="page-toolbar">
         <a href="javascript:;" class="btn btn-lightred no-border" daterangepicker="rangeOptions" date-begin="startDate" date-end="endDate">
           <i class="fa fa-calendar"></i>&nbsp;&nbsp;<span>{{startDate}} - {{endDate}}</span>&nbsp;&nbsp;<i class="fa fa-angle-down"></i>
         </a>
       </div>
-
     </div>
-
   </div>
+  <!-- END PAGE HEADER -->
+
   <!-- page content -->
   <div class="pagecontent">
+
+
+    <!-- row -->
+    <div class="row">
+
+
+      <!-- col -->
       <div class="col-md-12">
 
         <!-- tile -->
         <section class="tile" fullscreen="isFullscreen01">
 
-<div class="row">  
-          <div class="tile-body" ng-controller="TableRowCtrl">
+          <!-- tile header -->
+          <div class="tile-header dvd dvd-btm">
+            <h1 class="custom-font"><strong>Table</strong> Sorting</h1>
+            <ul class="controls">
+              <li class="dropdown" dropdown on-toggle="toggled(open)">
 
-            <button class="btn btn-default btn-sm pull-right" ng-click="tableParams.data[1].$selected = true">Select second row</button>
-            <div>
-              <strong>Selected users:</strong> {{ data | filter:{"$selected": true} }}
-            </div>
+                <a href dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
 
-            <table ng-table="tableParams" show-filter="true" class="table table-custom ng-table-rowselected">
-              <tr ng-repeat="user in $data"
-                  ng-click="user.$selected = !user.$selected; changeSelection(user)"
-                  ng-class="{'active': user.$selected}">
-                <td data-title="'Name'" sortable="'name'" filter="{ 'name': 'text' }">
-                  {{user.name}}
-                </td>
-                <td data-title="'Age'" sortable="'age'" filter="{ 'age': 'text' }">
-                  {{user.age}}
-                </td>
-                <td data-title="'Age'" sortable="'age'" filter="{ 'age': 'text' }">
-                  abc
-                </td>
-                                <td data-title="'Age'" sortable="'age'" filter="{ 'age': 'text' }">
-                  abc
-                </td>
-                                <td data-title="'Age'" sortable="'age'" filter="{ 'age': 'text' }">
-                  abc
-                </td>
-                                <td data-title="'Age'" sortable="'age'" filter="{ 'age': 'text' }">
-                  abc
-                </td>
+                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                  <li>
+                    <a href tile-control-toggle>
+                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                    </a>
+                  </li>
+            </ul>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile body -->
+          <div class="tile-body" ng-controller="TableSortCtrl">
+            <table ng-table="tableParams" class="table table-custom">
+              <tr ng-repeat="user in $data">
+                <td data-title="'Status'" sortable="'name'">{{user.name}}</td>
+                <td data-title="'Grupo'" sortable="'name'">{{user.name}}</td>
+                <td data-title="'Colaborador'" sortable="'name'">{{user.name}}</td>
+                <td data-title="'Bateria'" sortable="'name'">{{user.name}}</td>
+                <td data-title="'Conexao'" sortable="'name'">{{user.name}}</td>
+                <td data-title="'Velocidade'" sortable="'name'">{{user.name}}</td>
+                <td data-title="'Armazenamento'" sortable="'name'">{{user.name}}</td>
+                <td data-title="'Última localização'" sortable="'name'">{{user.name}}</td>
+                <td data-title="'GPS'" sortable="'name'">{{user.name}}</td>
+                <td data-title="'Name'" sortable="'name'">{{user.name}}</td>
               </tr>
             </table>
 
           </div>
-          </div>
+          <!-- /tile body -->
+
         </section>
-</div>
+        <!-- /tile -->
+
+      </div>
+      <!-- /col -->
+
+
+
+    </div>
+    <!-- /row -->
+
+
+
+
+
+  </div>
+  <!-- /page content -->
+
+
+
+
 </div>

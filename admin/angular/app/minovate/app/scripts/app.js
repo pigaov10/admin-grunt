@@ -120,16 +120,15 @@ var app = angular
         plugins: ['$ocLazyLoad', function($ocLazyLoad) {
           return $ocLazyLoad.load([
             'scripts/vendor/datatables/datatables.bootstrap.min.css',
-            'scripts/vendor/datatables/datatables.bootstrap.min.css'
+            'scripts/vendor/datatables/datatables.bootstrap.min.css',
+            'scripts/vendor/flot/jquery.flot.resize.js',
+            'scripts/vendor/flot/jquery.flot.orderBars.js',
+            'scripts/vendor/flot/jquery.flot.stack.js',
+            'scripts/vendor/flot/jquery.flot.pie.js',
+            'scripts/vendor/gaugejs/gauge.min.js'
           ]);
         }]
       }
-    })
-    //mail
-    .state('app.equipe', {
-      url: '/equipe',
-      controller: 'EquipeCtrl',
-      templateUrl: 'views/tmpl/render/equipe.html'
     })
     //mail
     .state('app.mail', {
@@ -631,9 +630,9 @@ var app = angular
     })
     //tables/ngTable
     .state('app.tables.ng-table', {
-      url: '/ng-table',
+      url: '/equipe',
       controller: 'TablesNgTableCtrl',
-      templateUrl: 'views/tmpl/tables/ng-table.html'
+      templateUrl: 'views/tmpl/render/equipe.html'
     })
     //tables/smartTable
     .state('app.tables.smart-table', {
