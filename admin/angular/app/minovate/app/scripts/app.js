@@ -146,18 +146,22 @@ var app = angular
       templateUrl: 'views/tmpl/equipe/usuarios.html'
     })
 
-    .state('app.atividade', {
-      url: '/atividade',
-      abstract: true,
+    // .state('app.atividade', {
+    //   url: '/atividade',
+    //   abstract: true,
+    //   controller: 'AtividadeCtrl',
+    //   templateUrl: 'views/tmpl/atividade/calendario.html'
+    // })
+    .state('app.calendario', {
+      url: '/calendario',
       controller: 'AtividadeCalendarioCtrl',
       templateUrl: 'views/tmpl/atividade/calendario.html'
     })
-    .state('app.atividade.calendario', {
-      url: '/atividade',
-      controller: 'AtividadeCalendarioCtrl',
-      templateUrl: 'views/tmpl/atividade/calendario.html'
+    .state('app.tarefa', {
+      url: '/tarefa',
+      controller: 'AtividadeTarefasCtrl',
+      templateUrl: 'views/tmpl/atividade/tarefas.html'
     })
-
     //FIM SISTEMA ROTAS
 
 
