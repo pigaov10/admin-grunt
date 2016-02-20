@@ -1,0 +1,73 @@
+<style type="text/css">
+  body:{
+    zoom:90%;
+  }
+</style>
+<div class="page page-dashboard">
+  <div class="pageheader">
+    <div class="page-bar">
+      <ul class="page-breadcrumb">
+        <li>
+          <a href="#">Dashboard</a>
+        </li>
+      </ul>
+      <div ng-controller="DaterangepickerCtrl" class="page-toolbar">
+        <a href="javascript:;" class="btn btn-lightred no-border" daterangepicker="rangeOptions" date-begin="startDate" date-end="endDate">
+          <i class="fa fa-calendar"></i>&nbsp;&nbsp;<span>{{startDate}} - {{endDate}}</span>&nbsp;&nbsp;<i class="fa fa-angle-down"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div flex layout="column" style="width:989px">
+    <section class="demo-container md-whiteframe-z1" >
+      <md-content class="md-padding tabsdemoDynamicHeight" style="width:989px">
+        <md-tabs md-dynamic-height md-border-bottom>
+          <md-tab label="Usuário">
+            <md-content class="md-padding">
+          <div class="pagecontent">
+            <div class="row">
+              <section class="tile" fullscreen="isFullscreen01">
+                <div class="tile-body" ng-controller="EquipeUsuariosCtrl">
+                    <button type="button" class="btn btn-cyan mb-14">Adicionar</button>
+                    <button type="button" class="btn btn-blue mb-14">Importar</button>
+                    <button type="button" class="btn btn-default mb-14">Exportar</button>
+                  <table ng-table="tableParams" class="table table-custom">
+                    <tr ng-repeat="usuario in usuarios">
+                      <td data-title="'Status'" sortable="'name'">{{usuario.status}}</td>
+                      <td data-title="'Grupo'" sortable="'name'">{{usuario.grupo}}</td>
+                      <td data-title="'Colaborador'" sortable="'name'">{{usuario.colaborador}}</td>
+                      <td data-title="'Bateria'" sortable="'name'">
+                        <progressbar class="progress-sm not-rounded" value="usuario.bateria">{{usuario.bateria}}%</progressbar>
+                      </td>
+                      <td data-title="'Conexao'" sortable="'name'">{{usuario.conexao}}</td>
+                      <td data-title="'Velocidade'" sortable="'name'">{{usuario.velocidade}}</td>
+                      <td data-title="'Armazenamento'" sortable="'name'">
+                        <progressbar class="progress-sm not-rounded" value="usuario.armazenamento">{{usuario.armazenamento}}%</progressbar>
+                      </td>
+                      <td data-title="'Última localização'" sortable="'name'">{{usuario.localizacao.lat}}</td>
+                      <td data-title="'GPS'" sortable="'name'">{{usuario.gps}}</td>
+                      <td data-title="''" sortable="'name'"><i class="fa icon-list"></i></td>
+                    </tr>
+                  </table>
+                </div>
+              </section>
+            </div>
+            </md-content>
+          </md-tab>
+          <md-tab label="Mapa">
+            <md-content class="md-padding">
+              <h1 class="md-display-2">Mapa</h1>
+              <p>Lteste 2</p>
+            </md-content>
+          </md-tab>
+        </md-tabs>
+
+      </md-content>
+
+    </section>
+  </div>
+
+
+</div>
+</div>
