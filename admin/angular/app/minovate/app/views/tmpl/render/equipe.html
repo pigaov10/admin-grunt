@@ -3,7 +3,7 @@
     <div class="page-bar">
       <ul class="page-breadcrumb">
         <li>
-          <a href="#">Equipes</a>
+          <a href="#">Dashboard</a>
         </li>
       </ul>
       <div ng-controller="DaterangepickerCtrl" class="page-toolbar">
@@ -15,79 +15,47 @@
   </div>
   <!-- END PAGE HEADER -->
 
-  <!-- page content -->
-  <div class="pagecontent">
 
+  <button type="button" class="btn btn-cyan mb-14">Adicionar</button>
+  <button type="button" class="btn btn-blue mb-14">Importar</button>
+  <button type="button" class="btn btn-default mb-14">Exportar</button>
+  Somente Usuários Online
+  <div class="onoffswitch labeled blue inline-block"> <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="switch10" checked="checked"> <label class="onoffswitch-label" for="switch10"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label> </div>
+  Live Mode
+  <div class="onoffswitch labeled blue inline-block"> <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="switch11" checked="checked"> <label class="onoffswitch-label" for="switch11"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label> </div>
 
-    <!-- row -->
-    <div class="row">
-
-
-      <!-- col -->
-      <div class="col-md-12">
-              <button type="button" class="btn btn-cyan mb-14">Adicionar</button>
-              <button type="button" class="btn btn-blue mb-14">Importar</button>
-              <button type="button" class="btn btn-default mb-14">Exportar</button>
-                  <div class="onoffswitch greensea inline-block" style="margin-top:15px">
-                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="switch01" checked="">
-                    <label class="onoffswitch-label" for="switch01">
-                      <span class="onoffswitch-inner"></span>
-                      <span class="onoffswitch-switch"></span>
-                    </label>
+  <div flex layout="column" style="width:989px">
+    <section class="demo-container md-whiteframe-z1" >
+      <md-content class="md-padding tabsdemoDynamicHeight" style="width:989px">
+        <md-tabs md-dynamic-height md-border-bottom>
+          <md-tab label="Usuário">
+            <md-content class="md-padding">
+                  <div class="tile-body" ng-controller="TableSortCtrl">
+                    <table ng-table="tableParams" class="table table-custom">
+                      <tr ng-repeat="user in $data">
+                        <td data-title="'Status'" sortable="'name'">{{user.name}}</td>
+                        <td data-title="'Grupo'" sortable="'name'">{{user.name}}</td>
+                        <td data-title="'Colaborador'" sortable="'name'">{{user.name}}</td>
+                        <td data-title="'Bateria'" sortable="'name'">{{user.name}}</td>
+                        <td data-title="'Conexao'" sortable="'name'">{{user.name}}</td>
+                        <td data-title="'Velocidade'" sortable="'name'">{{user.name}}</td>
+                        <td data-title="'Armazenamento'" sortable="'name'">{{user.name}}</td>
+                        <td data-title="'Última localização'" sortable="'name'">{{user.name}}</td>
+                        <td data-title="'GPS'" sortable="'name'">{{user.name}}</td>
+                        <td data-title="'Name'" sortable="'name'">{{user.name}}</td>
+                      </tr>
+                    </table>
                   </div>
-                  <div class="onoffswitch greensea inline-block" style="margin-top:15px">
-                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="switch02" checked="">
-                    <label class="onoffswitch-label" for="switch02">
-                      <span class="onoffswitch-inner"></span>
-                      <span class="onoffswitch-switch"></span>
-                    </label>
-                  </div>
-                  <hr>
-        <!-- tile -->
-        <section class="tile" fullscreen="isFullscreen01">
+            </md-content>
+          </md-tab>
+          <md-tab label="Mapa">
+            <md-content class="md-padding">
+              <h1 class="md-display-2">Mapa</h1>
+              <p>Lteste 2</p>
+            </md-content>
+          </md-tab>
+        </md-tabs>
 
-          <!-- tile header -->
-          <!-- /tile header -->
+      </md-content>
 
-          <!-- tile body -->
-          <div class="tile-body" ng-controller="TableSortCtrl">
-            <table ng-table="tableParams" class="table table-custom">
-              <tr ng-repeat="user in $data">
-                <td data-title="'Status'" sortable="'name'">{{user.name}}</td>
-                <td data-title="'Grupo'" sortable="'name'">{{user.name}}</td>
-                <td data-title="'Colaborador'" sortable="'name'">{{user.name}}</td>
-                <td data-title="'Bateria'" sortable="'name'">{{user.name}}</td>
-                <td data-title="'Conexao'" sortable="'name'">{{user.name}}</td>
-                <td data-title="'Velocidade'" sortable="'name'">{{user.name}}</td>
-                <td data-title="'Armazenamento'" sortable="'name'">{{user.name}}</td>
-                <td data-title="'Última localização'" sortable="'name'">{{user.name}}</td>
-                <td data-title="'GPS'" sortable="'name'">{{user.name}}</td>
-                <td data-title="'Name'" sortable="'name'">{{user.name}}</td>
-              </tr>
-            </table>
-
-          </div>
-          <!-- /tile body -->
-
-        </section>
-        <!-- /tile -->
-
-      </div>
-      <!-- /col -->
-
-
-
-    </div>
-    <!-- /row -->
-
-
-
-
-
-  </div>
-  <!-- /page content -->
-
-
-
-
-</div>
+    </section>

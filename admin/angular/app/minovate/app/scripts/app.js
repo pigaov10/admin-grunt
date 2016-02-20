@@ -111,6 +111,7 @@ var app = angular
       url: '/app',
       templateUrl: 'views/tmpl/app.html'
     })
+
     //dashboard
     .state('app.dashboard', {
       url: '/dashboard',
@@ -130,6 +131,23 @@ var app = angular
         }]
       }
     })
+
+    //SISTEMA ROTAS
+    //tables/ngTable
+    .state('app.equipe', {
+      url: '/usuarios',
+      abstract: true,
+      controller: 'EquipeCtrl',
+      templateUrl: 'views/tmpl/equipe/usuarios.html'
+    })
+    .state('app.equipe.usuarios', {
+      url: '/usuarios',
+      controller: 'EquipeUsuariosCtrl',
+      templateUrl: 'views/tmpl/equipe/usuarios.html'
+    })
+    //FIM SISTEMA ROTAS
+
+
     //mail
     .state('app.mail', {
       abstract: true,
