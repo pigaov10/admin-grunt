@@ -20,9 +20,11 @@
 
 <div class="page page-full page-calendar">
 
-  <button type="button" class="btn btn-cyan mb-14">Adicionar</button>
+  <div ng-controller="ModalDemoCtrl">
+    <button type="button" class="btn btn-cyan mb-14" ng-click="open('lg')">Nova Tarefa</button>
   <button type="button" class="btn btn-blue mb-14">Importar</button>
   <button type="button" class="btn btn-default mb-14">Exportar</button>
+  </div>
   <hr>
   <div class="tbox tbox-sm">
 
@@ -30,17 +32,19 @@
     <div class="tcol w-lg bg-tr-white lt b-r">
 
       <div class="p-15 bg-white">
-        <button type="button" class="btn btn-greensea btn-xs mb-10 pull-right b-0" ng-click="addEvent()" tooltip="Doule-click to calendar day to add event" tooltip-placement="bottom"><i class="fa fa-plus"></i></button>
-        <h4 class="custom-font text-default m-0">Events</h4>
+<!--         <button type="button" class="btn btn-greensea btn-xs mb-10 pull-right b-0" ng-click="addEvent()" tooltip="Doule-click to calendar day to add event" tooltip-placement="bottom"><i class="fa fa-plus"></i></button> -->
+        <h4 class="custom-font text-default m-0">Em Aberto <span class="badge bg-red">1</span></h4>
       </div>
 
       <div class="p-15" ng-controller="EquipeUsuariosCtrl">
-        <table ng-table="tableParams" class="table table-custom">
-          <tr ng-repeat="usuario in usuarios">
-            <td data-title="'Status'" sortable="'name'">{{usuario.status}}</td>
-            <td data-title="'Grupo'" sortable="'name'">{{usuario.grupo}}</td>
-          </tr>
-        </table>
+        <section class="tile" fullscreen="isFullscreen01">
+          <table ng-table="tableParams" class="table table-custom">
+            <tr ng-repeat="usuario in usuarios">
+              <td data-title="'Status'" sortable="'name'">{{usuario.status}}</td>
+              <td data-title="'Grupo'" sortable="'name'">{{usuario.grupo}}</td>
+            </tr>
+          </table>
+      </section>
       </div>
 
 
@@ -91,3 +95,20 @@
 
 </div>
 
+<script type="text/ng-template" id="myModalContent.html">
+  <div class="modal-header">
+    <h3 class="modal-title custom-font">Im a modal</h3>
+  </div>
+  <div class="modal-body">
+    <ul>
+      <li ng-repeat="item in items">
+        <a ng-click="selected.item = item">{{ item }}</a>
+      </li>
+    </ul>
+    Selected: <b>{{ selected.item }}</b>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-success btn-ef btn-ef-3 btn-ef-3c" ng-click="ok()"><i class="fa fa-arrow-right"></i> Submit</button>
+    <button class="btn btn-lightred btn-ef btn-ef-4 btn-ef-4c" ng-click="cancel()"><i class="fa fa-arrow-left"></i> Cancel</button>
+  </div>
+</script>
