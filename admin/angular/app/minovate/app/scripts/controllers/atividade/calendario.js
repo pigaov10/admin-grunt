@@ -12,19 +12,12 @@ app
     $scope.eventSource = {
       url: 'http://www.google.com/calendar/feeds/usa__en%40holiday.calendar.google.com/public/basic',
       className: 'gcal-event',           // an option!
-      currentTimezone: 'America/Chicago' // an option!
+      currentTimezone: 'America/SaoPaulo' // an option!
     };
 
     /* event source that contains custom events on the scope */
     $scope.events = [
-      {title: 'All Day Event',start: new Date(y, m, 1), className: ['b-l b-2x b-greensea']},
-      {title: 'Long Event',start: new Date(y, m, d - 5),end: new Date(y, m, d - 2), className: ['bg-dutch']},
-      {id: 999,title: 'Repeating Event',start: new Date(y, m, d - 3, 16, 0),allDay: false, className: ['b-l b-2x b-primary']},
-      {id: 999,title: 'Repeating Event',start: new Date(y, m, d + 4, 16, 0),allDay: false, className: ['b-l b-2x b-primary']},
-      {title: 'Birthday Party',start: new Date(y, m, d + 1, 19, 0),end: new Date(y, m, d + 1, 22, 30),allDay: false, className: ['b-l b-2x b-default']},
-      {title: 'Click for Google',start: new Date(y, m, 28),end: new Date(y, m, 29),url: 'http://google.com/', className: ['b-l b-2x b-hotpink']},
-      {title: 'Make cupcakes', start: new Date(y, m, 2), className: ['b-l b-2x b-info'], location:'Bratislava', info:'The best in whole world.'},
-      {title: 'Call wife', start: new Date(y, m, 6),end: new Date(y, m, 7), className: ['b-l b-2x b-red'], location:'Piestany', info:'And say her hello.'}
+      {title: 'Tarefa 1',start: new Date(y, m, 15), className: ['b-l b-2x b-greensea']},
     ];
 
     /* alert on dayClick */

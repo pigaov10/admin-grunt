@@ -1,6 +1,29 @@
+<div class="page page-dashboard">
+  <div class="pageheader">
+    <div class="page-bar">
+      <ul class="page-breadcrumb">
+        <li>
+          <a href="#">Atividades</a>
+
+        </li>
+      </ul>
+      Calendário
+      <input type="text" id="busca" placeholder="Busca" style="width:110px;margin-left:400px">  
+      <div ng-controller="DaterangepickerCtrl" class="page-toolbar">
+        <a href="javascript:;" class="btn btn-lightred no-border" daterangepicker="rangeOptions" date-begin="startDate" date-end="endDate">
+          <i class="fa fa-calendar"></i>&nbsp;&nbsp;<span>{{startDate}} - {{endDate}}</span>&nbsp;&nbsp;<i class="fa fa-angle-down"></i>
+        </a>
+      </div>
+    </div>
+</div>
+
+
 <div class="page page-full page-calendar">
 
-
+  <button type="button" class="btn btn-cyan mb-14">Adicionar</button>
+  <button type="button" class="btn btn-blue mb-14">Importar</button>
+  <button type="button" class="btn btn-default mb-14">Exportar</button>
+  <hr>
   <div class="tbox tbox-sm">
 
 
@@ -11,14 +34,13 @@
         <h4 class="custom-font text-default m-0">Events</h4>
       </div>
 
-      <div class="p-15">
-
-        <div ng-repeat="e in events" class="p-10 mb-10 event-control {{e.className[0]}}">
-          <input ng-model="e.title" class="form-control input-sm input-unstyled">
-          <a class="pull-right text-muted event-remove" ng-click="remove($index)"><i class="fa fa-trash-o"></i></a>
-          <div class="text-xs text-muted">{{e.start | date:"MMM dd"}} - {{e.end | date:"MMM dd"}}</div>
-        </div>
-
+      <div class="p-15" ng-controller="EquipeUsuariosCtrl">
+        <table ng-table="tableParams" class="table table-custom">
+          <tr ng-repeat="usuario in usuarios">
+            <td data-title="'Status'" sortable="'name'">{{usuario.status}}</td>
+            <td data-title="'Grupo'" sortable="'name'">{{usuario.grupo}}</td>
+          </tr>
+        </table>
       </div>
 
 
