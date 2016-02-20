@@ -16,6 +16,16 @@
             </li>
           </ul>
         </li>
+        <li ui-sref-active="active" ng-class="{'open':$state.includes('app.atividade')}">
+          <a ui-sref="app.atividade"><fa name="list"></fa> <span>Atividades</span></a>
+          <ul>
+            <li ui-sref-active="active">
+              <a ui-sref="app.atividade.calendario">
+                <fa name="caret-right"></fa> Calendário
+              </a>
+            </li>
+          </ul>
+        </li>
     </accordion-group>
 
   </accordion>

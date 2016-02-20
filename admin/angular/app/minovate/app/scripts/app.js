@@ -145,6 +145,19 @@ var app = angular
       controller: 'EquipeUsuariosCtrl',
       templateUrl: 'views/tmpl/equipe/usuarios.html'
     })
+
+    .state('app.atividade', {
+      url: '/atividade',
+      abstract: true,
+      controller: 'AtividadeCalendarioCtrl',
+      templateUrl: 'views/tmpl/atividade/calendario.html'
+    })
+    .state('app.atividade.calendario', {
+      url: '/atividade',
+      controller: 'AtividadeCalendarioCtrl',
+      templateUrl: 'views/tmpl/atividade/calendario.html'
+    })
+
     //FIM SISTEMA ROTAS
 
 
