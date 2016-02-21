@@ -162,6 +162,11 @@ var app = angular
       controller: 'AtividadeTarefasCtrl',
       templateUrl: 'views/tmpl/atividade/tarefas.html'
     })
+    .state('app.local', {
+      url: '/local',
+      controller: 'AtividadeLocalCtrl',
+      templateUrl: 'views/tmpl/atividade/local.html'
+    })
     //FIM SISTEMA ROTAS
 
 

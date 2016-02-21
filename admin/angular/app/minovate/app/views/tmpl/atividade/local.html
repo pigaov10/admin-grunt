@@ -1,0 +1,57 @@
+<div class="page page-dashboard">
+  <div class="pageheader">
+    <div class="page-bar">
+      <ul class="page-breadcrumb">
+        <li>
+          <a href="#">Atividades</a>
+
+        </li>
+      </ul>
+      Locais
+      <input type="text" id="busca" placeholder="Busca" style="width:110px;margin-left:400px">  
+      <div ng-controller="DaterangepickerCtrl" class="page-toolbar">
+        <a href="javascript:;" class="btn btn-lightred no-border" daterangepicker="rangeOptions" date-begin="startDate" date-end="endDate">
+          <i class="fa fa-calendar"></i>&nbsp;&nbsp;<span>{{startDate}} - {{endDate}}</span>&nbsp;&nbsp;<i class="fa fa-angle-down"></i>
+        </a>
+      </div>
+    </div>
+</div>
+
+  <div ng-controller="ModalDemoCtrl">
+    <button type="button" class="btn btn-cyan mb-14" ng-click="open('lg')">Novo Local</button>
+    <button type="button" class="btn btn-blue mb-14">Excluir</button>
+    <button type="button" class="btn btn-default mb-14">Importar</button>
+    <button type="button" class="btn btn-default mb-14">Exportar</button>
+  </div>
+  <hr>
+
+<section class="tile" fullscreen="isFullscreen08">
+   <div class="tile-body example">
+      <div class="row"> 
+        <div class="col-xs-8">
+          <div class="row" style="width:auto">
+<!--             <section class="tile" fullscreen="isFullscreen01"> -->
+              <div class="tile-body" ng-controller="EquipeUsuariosCtrl">
+                  <button type="button" class="btn btn-cyan mb-14">Adicionar</button>
+                  <button type="button" class="btn btn-blue mb-14">Importar</button>
+                  <button type="button" class="btn btn-default mb-14">Exportar</button>
+                <table ng-table="tableParams" class="table table-custom">
+                  <tr ng-repeat="usuario in usuarios">
+                    <td data-title="'Data'" sortable="'name'">{{usuario.status}}</td>
+                    <td data-title="'ID'" sortable="'name'">{{usuario.grupo}}</td>
+                    <td data-title="'Status'" sortable="'name'">{{usuario.colaborador}}</td>
+                    <td data-title="'Tipo Tarefa'" sortable="'name'">{{usuario.bateria}}</td>
+                    <td data-title="'Colaborador'" sortable="'name'">{{usuario.conexao}}</td>
+                    <td data-title="'Cliente'" sortable="'name'">{{usuario.velocidade}}</td>
+                  </tr>
+                </table>
+              </div>
+<!--             </section> -->
+          </div>
+        </div> 
+        <div class="col-xs-4">
+            MAPA
+        </div> 
+      </div>
+   </div> 
+</section>
