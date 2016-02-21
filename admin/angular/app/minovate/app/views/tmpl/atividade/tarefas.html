@@ -16,3 +16,94 @@
       </div>
     </div>
 </div>
+
+<section class="tile" fullscreen="isFullscreen08">
+   <div class="tile-body example">
+      <div class="row"> 
+        <div class="col-xs-8">
+          <div class="row" style="width:auto">
+<!--             <section class="tile" fullscreen="isFullscreen01"> -->
+              <div class="tile-body" ng-controller="EquipeUsuariosCtrl">
+                  <button type="button" class="btn btn-cyan mb-14">Adicionar</button>
+                  <button type="button" class="btn btn-blue mb-14">Importar</button>
+                  <button type="button" class="btn btn-default mb-14">Exportar</button>
+                <table ng-table="tableParams" class="table table-custom">
+                  <tr ng-repeat="usuario in usuarios">
+                    <td data-title="'Data'" sortable="'name'">{{usuario.status}}</td>
+                    <td data-title="'ID'" sortable="'name'">{{usuario.grupo}}</td>
+                    <td data-title="'Status'" sortable="'name'">{{usuario.colaborador}}</td>
+                    <td data-title="'Tipo Tarefa'" sortable="'name'">{{usuario.bateria}}</td>
+                    <td data-title="'Colaborador'" sortable="'name'">{{usuario.conexao}}</td>
+                    <td data-title="'Cliente'" sortable="'name'">{{usuario.velocidade}}</td>
+                  </tr>
+                </table>
+              </div>
+<!--             </section> -->
+          </div>
+        </div> 
+        <div class="col-xs-4">
+            MAPA
+        </div> 
+      </div>
+   </div> 
+</section>
+
+
+<section class="tile" fullscreen="isFullscreen08">
+   <div class="tile-body example">
+      <div class="row"> 
+        <div class="col-xs-6">
+           <p class="text-uppercase text-strong mb-10 custom-font">Order Details</p>
+           <ul class="list-unstyled text-default lt mb-20">
+              <li><strong>ID:</strong> <a href="javascript:;">35651</a></li>
+              <li>January 29, 2015 at 16:58</li>
+              <li>John Douey</li>
+              <li>Ukraine</li>
+           </ul>
+        </div> 
+        <div class="col-xs-6">
+          <div flex layout="column">
+            <section class="demo-container md-whiteframe-z1" >
+              <md-content class="md-padding tabsdemoDynamicHeight" >
+                <md-tabs md-dynamic-height md-border-bottom>
+                  <md-tab label="Milestone">
+                    <md-content class="md-padding">
+                  <div class="pagecontent">
+                    <div class="row">
+
+                    </div>
+                    </md-content>
+                  </md-tab>
+                  <md-tab label="Status">
+                    <md-content class="md-padding">
+                      <h1 class="md-display-2">Mapa</h1>
+                      <p>Lteste 2</p>
+                    </md-content>
+                  </md-tab>
+                  <md-tab label="Realizado">
+                    <md-content class="md-padding">
+                      <h1 class="md-display-2">Mapa</h1>
+                      <p>Lteste 2</p>
+                    </md-content>
+                  </md-tab>
+                  <md-tab label="Dif">
+                    <md-content class="md-padding">
+                      <h1 class="md-display-2">Mapa</h1>
+                      <p>Lteste 2</p>
+                    </md-content>
+                  </md-tab>
+                </md-tabs>
+
+              </md-content>
+
+            </section>
+          </div>
+        </div> 
+      </div>
+   </div> 
+</section>
+
+
+</div>
+
+</div>
