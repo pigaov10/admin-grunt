@@ -14,6 +14,7 @@
 var app = angular
   .module('minovateApp', [
     'ngAnimate',
+    'angular-here-maps',
     'ngCookies',
     'ngResource',
     'ngSanitize',
@@ -88,7 +89,20 @@ var app = angular
   .config(['uiSelectConfig', function (uiSelectConfig) {
     uiSelectConfig.theme = 'bootstrap';
   }])
-
+  .config(['$httpProvider', function($httpProvider) {
+        $httpProvider.defaults.useXDomain = true;
+        delete $httpProvider.defaults.headers.common['X-Requested-With'];
+    }
+  ])
+  .config(function(MapConfigProvider) {
+      MapConfigProvider.setOptions({
+          appId: 'dVyk5PvKfGTxEzFewbmx',
+          appCode: 'xZCnEkfVUrdE_CRK7tuUaA',
+          libraries: 'ui,mapevents,pano',
+          pixelRatio: 2, // Optional (Default: 1)
+          pixelPerInch: 320 // Optional (Default: 72)
+      });
+  })
   //angular-language
   .config(['$translateProvider', function($translateProvider) {
     $translateProvider.useStaticFilesLoader({

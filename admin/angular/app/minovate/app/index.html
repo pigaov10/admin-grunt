@@ -194,8 +194,15 @@
 
     <!-- endbuild -->
 
-    <!-- build:js({.tmp,app}) scripts/app.js -->
+<link rel="stylesheet" href="http://js.api.here.com/v3/3.0/mapsjs-ui.css" />
 
+<script src="http://js.api.here.com/v3/3.0/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://js.api.here.com/v3/3.0/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://js.api.here.com/v3/3.0/mapsjs-ui.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://js.api.here.com/v3/3.0/mapsjs-mapevents.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://js.api.here.com/v3/3.0/mapsjs-pano.js" type="text/javascript" charset="utf-8"></script>
+    <!-- build:js({.tmp,app}) scripts/app.js -->
+<script src="bower_components/bower_components/angular-here-maps/dist/angular-here-maps.min.js"></script>
     <script src="scripts/app.js"></script>
 
     <script src="scripts/controllers/main.js"></script>
@@ -322,6 +329,7 @@
     <script src="scripts/controllers/material/whiteframe.js"></script>
     <script src="scripts/controllers/equipe.js"></script>
 
+    <script src="scripts/controllers/here-map.js"></script>
     <script src="scripts/controllers/equipe/usuarios.js"></script>
     <script src="scripts/controllers/atividade/atividade.js"></script>
     <script src="scripts/controllers/atividade/calendario.js"></script>

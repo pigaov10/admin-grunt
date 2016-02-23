@@ -62,8 +62,10 @@
           </md-tab>
           <md-tab label="Mapa">
             <md-content class="md-padding">
-              <h1 class="md-display-2">Mapa</h1>
-              <p>Lteste 2</p>
+              <div ng-controller="HereMapCtrl"> 
+                <map style="width:300px;height:300px; border: solid 3px gray">
+                </map>
+              </div>
             </md-content>
           </md-tab>
         </md-tabs>
