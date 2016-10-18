@@ -1,5 +1,8 @@
 {
   "Menu": {
+    "FORMULARIO":"Form",
+
+
     "DASHBOARD": "Dashboard",
     "MAIL": "Mail",
     "INBOX": "Inbox",
@@ -77,4 +80,3 @@
     "DRAGULA": "Dragula"
   }
 }
-

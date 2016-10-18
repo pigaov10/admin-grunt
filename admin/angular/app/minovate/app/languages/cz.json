@@ -1,5 +1,7 @@
 {
   "Menu": {
+    "FORMULARIO":"Forms",
+
     "DASHBOARD": "Nástěnka",
     "MAIL": "Maily",
     "INBOX": "Schránka",
@@ -77,4 +79,3 @@
     "DRAGULA": "Dragula"
   }
 }
-
