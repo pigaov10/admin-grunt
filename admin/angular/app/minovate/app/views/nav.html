@@ -8,6 +8,8 @@
       <ul id="navigation" nav-collapse ripple>
         <li ui-sref-active="active"><a ui-sref="app.dashboard"><fa name="dashboard"></fa> <span>{{ 'Menu.FORMULARIO' | translate }}</span></a></li>
 
+        <li ui-sref-active="active"><a ui-sref="app.tabela"><fa name="dashboard"></fa> <span>Tabela</span></a></li>
+
         <li ui-sref-active="active" ng-class="{'open':$state.includes('app.mail')}">
           <a ui-sref="app.mail"><fa name="envelope-o"></fa> <span>{{ 'Menu.MAIL' | translate }}</span> <span class="badge bg-lightred">6</span></a>
           <ul>

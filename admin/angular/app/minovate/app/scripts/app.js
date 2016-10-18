@@ -125,6 +125,14 @@ var app = angular
         }]
       }
     })
+    // tabela
+    .state('app.tabela', {
+      url: '/tabela',
+      controller: 'TabelaCtrl',
+      templateUrl: 'views/tmpl/render/tabela.html'
+    })
+
+
     //mail
     .state('app.mail', {
       abstract: true,
@@ -874,4 +882,3 @@ var app = angular
       templateUrl: 'views/tmpl/help.html'
     });
   }]);
-
